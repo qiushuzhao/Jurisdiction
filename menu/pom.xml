@@ -7,9 +7,9 @@
     <artifactId>parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>com</groupId>
+<!--   <groupId>com</groupId> -->
   <artifactId>menu</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+<!--   <version>0.0.1-SNAPSHOT</version> -->
   <packaging>war</packaging>
   <name>menu Maven Webapp</name>
   <url>http://maven.apache.org</url>
