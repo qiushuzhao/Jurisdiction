@@ -14,8 +14,7 @@
 	<!-- 扫描所有类 包含注解的方法 -->
 	<context:component-scan base-package="com.controller" />
 	<!-- 使用自定义的消息转换器来完成 JSON 的转换 -->
-	<bean
-		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" />
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" />
 	<bean
 		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
 		<property name="messageConverters">
