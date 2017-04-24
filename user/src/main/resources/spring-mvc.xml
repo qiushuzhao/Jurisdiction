@@ -52,6 +52,8 @@
 		</property>
 	</bean>
 
+<!-- 	对静态资源的处理 -->
+	<mvc:default-servlet-handler/>
 	<!-- 文件上传下载配置  -->
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <property name="defaultEncoding" value="utf-8" />
