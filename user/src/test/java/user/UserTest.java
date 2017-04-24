@@ -11,6 +11,7 @@ import com.service.UserServiceImpl;
 public class UserTest {
 
 	public static void main(String[] args) {
+		@SuppressWarnings("resource")
 		ApplicationContext app=new ClassPathXmlApplicationContext("spring-mybatis.xml");
 		UserService users=app.getBean(UserServiceImpl.class);
 		User u= new User();
