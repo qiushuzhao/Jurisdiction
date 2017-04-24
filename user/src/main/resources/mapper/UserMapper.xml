@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.UserDao">
+
+	<select id="select" parameterType="com.entity.User" resultType="com.entity.User">
+		SELECT id, name, sex
+		FROM user
+		<where>
+			<if test="id!=null">
+				and id=#{id}
+			</if>
+			<if test="name!=null">
+				and name=#{name}
+			</if>
+			<if test="sex!=null">
+				and sex=#{sex}
+			</if>
+		</where>
+		limit 
+		<![CDATA[ ${(page.pageNo-1)*page.pageSize},${page.pageSize} ]]>
+	</select>
+	
+	<select id="count" parameterType="com.entity.User" resultType="java.lang.Integer">
+		select count(*) from user
+	</select>
+</mapper>
