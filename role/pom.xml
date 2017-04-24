@@ -26,9 +26,15 @@
 		<finalName>role</finalName>
 		<plugins>
 			<plugin>
-				<groupId>org.mortbay.jetty</groupId>
+				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
-				<version>8.1.16.v20140903</version>
+				<version>9.2.10.v20150310</version>
+				<configuration>
+					<scanIntervalSeconds>5</scanIntervalSeconds>
+					<webApp>
+						<contextPath>/</contextPath>
+					</webApp>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

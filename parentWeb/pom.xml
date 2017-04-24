@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com</groupId>
+		<artifactId>parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<!-- <groupId>com</groupId> -->
+	<artifactId>parentWeb</artifactId>
+	<!-- <version>0.0.1-SNAPSHOT</version> -->
+	<packaging>war</packaging>
+	<name>parentWeb Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	<dependencies>
+		<dependency>
+			<groupId>com</groupId>
+			<artifactId>user</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<type>war</type>
+		</dependency>
+
+		<dependency>
+			<groupId>com</groupId>
+			<artifactId>role</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<type>war</type>
+		</dependency>
+
+		<dependency>
+			<groupId>com</groupId>
+			<artifactId>menu</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<type>war</type>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>parentWeb</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>9.2.10.v20150310</version>
+				<configuration>
+					<scanIntervalSeconds>5</scanIntervalSeconds>
+					<webApp>
+						<contextPath>/</contextPath>
+					</webApp>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<packagingExcludes>WEB-INF/web.xml</packagingExcludes>
+					<overlays>
+						<!-- 合并user -->
+						<overlay>
+							<groupId>com</groupId>
+							<artifactId>user</artifactId>
+						</overlay>
+						<!-- 合并role -->
+						<overlay>
+							<groupId>com</groupId>
+							<artifactId>role</artifactId>
+						</overlay>
+						<!-- 合并menu -->
+						<overlay>
+							<groupId>com</groupId>
+							<artifactId>menu</artifactId>
+						</overlay>
+					</overlays>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+</project>
