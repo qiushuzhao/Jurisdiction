@@ -4,9 +4,9 @@ import java.util.List;
 
 public class Page<T> {
 
-    public static final int DEFAULT_PAGE_SIZE = 3;
+    public static final int DEFAULT_PAGE_SIZE = 2;
 
-    protected int pageNo = 1; // 当前页, 默认为第1页
+    protected int pageNo = 2; // 当前页, 默认为第1页
     protected int pageSize = DEFAULT_PAGE_SIZE; // 每页记录数
     protected long totalRecord = -1; // 总记录数, 默认为-1, 表示需要查询
     protected int totalPage = -1; // 总页数, 默认为-1, 表示需要计算
